@@ -1,0 +1,14 @@
+{
+    "name": "marksync\/useconfig",
+    "description": "useconfig",
+    "autoload": {
+        "psr-4": {
+            "useconfig\\": "src\/"
+        }
+    },
+    "require": {
+        "marksync\/provider": "^1.0",
+        "vlucas\/phpdotenv": "^5.6",
+        "composer\/class-map-generator": "^1.1"
+    }
+}
