@@ -1,6 +1,8 @@
 {
     "name": "marksync\/useconfig",
     "description": "useconfig",
+    "type": "library",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "useconfig\\": "src\/"
@@ -11,4 +13,5 @@
         "vlucas\/phpdotenv": "^5.6",
         "composer\/class-map-generator": "^1.1"
     }
+     
 }
