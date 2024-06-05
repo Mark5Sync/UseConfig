@@ -13,15 +13,18 @@ class UseConfig
         $result = [];
 
         foreach ($map as $class => $path) {
-            $reflection = new \ReflectionClass($class);
-
-            if (!$reflection->isSubclassOf($config))
+            if (!str_ends_with($class, 'Config'))
                 continue;
 
-            $result[] = $class;
+            try {
+                $reflection = new \ReflectionClass($class);
+                if (!$reflection->isSubclassOf($config))
+                    continue;
+                $result[] = $class;
+            } catch (\Throwable $th) {
+            }
         }
 
         return $result;
     }
-
 }
