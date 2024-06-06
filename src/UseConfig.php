@@ -7,13 +7,13 @@ use Composer\ClassMapGenerator\ClassMapGenerator;
 class UseConfig
 {
 
-    static function find($config, string $findInPath = './')
+    static function find($config, string $findInPath = './', ?string $endWith = null)
     {
         $map = ClassMapGenerator::createMap($findInPath);
         $result = [];
 
         foreach ($map as $class => $path) {
-            if (!str_ends_with($class, 'Config'))
+            if (!str_ends_with($class, $endWith ? $endWith : 'Config'))
                 continue;
 
             try {
@@ -27,4 +27,5 @@ class UseConfig
 
         return $result;
     }
+
 }
